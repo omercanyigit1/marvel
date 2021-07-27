@@ -7,7 +7,7 @@ import marvel_logo from "../../assets/images/marvel_logo.png";
 import SearchItem from "../../components/SearchItem";
 
 const HomePage = (props) => {
-    const {list, loading, error, getList} = props;
+    const {list, loading, error, limit, getList} = props;
     const [query, setQuery] = useState('');
     const [offsetState, setOffsetState] = useState(0);
     var favorites = localStorage.getItem('favorites');
@@ -16,9 +16,9 @@ const HomePage = (props) => {
     useEffect(() => {
         //we can fetch the characters when the component called.
         if(query === '') {
-            getList('comics', offsetState);
+            getList('comics', offsetState * limit);
         } else {
-            getList('comics', offsetState, query);
+            getList('comics', offsetState * limit, query);
         }
 
         //i put the hash value here because every hash value can change data will be update and work. We do not need to refresh the page.
@@ -71,6 +71,7 @@ const mapStateToProps = (state) => {
         loading: state.list.loading,
         error: state.list.error,
         list: state.list.list,
+        limit: state.list.limit
     }
 }
 
