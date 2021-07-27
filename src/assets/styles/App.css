@@ -1,0 +1,147 @@
+p {
+    margin-bottom: 0;
+}
+
+.ant-layout {
+    background-color: #313131;
+}
+
+.section-list-item {
+    padding-top: 175px;
+    position: relative;
+    padding-bottom: 175px;
+    min-height: 800px;
+}
+
+.search-item {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    height: 150px;
+    background-color: rgba(255, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.search-item .ant-input {
+    width: 450px;
+    height: 40px;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.grid-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.grid-el .ant-card {
+    height: 100%;
+}
+
+.grid-el .ant-card img {
+    height: 100%;
+}
+
+.grid-el {
+    height: 320px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.grid-el .favorite-item {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50px);
+}
+
+.grid-el.my-favorite-item {
+    transition: all .1s;
+    border: 5px solid red;
+}
+
+.grid-el.my-favorite-item .favorite-item {
+    transform: translateY(0);
+}
+
+.grid-el.my-favorite-item .favorite-item .anticon, .grid-el.my-favorite-item .favorite-item:hover .anticon {
+    color: red;
+}
+
+.grid-el.my-favorite-item .favorite-item.ant-btn-dashed, .grid-el.my-favorite-item .favorite-item.ant-btn-dashed:hover {
+    border-color: red;
+}
+
+.grid-el:hover .grid-el-content {
+    transform: translateY(0);
+}
+
+.grid-el:hover .favorite-item {
+    transform: translateY(0);
+}
+
+.grid-el:hover .overlay-item {
+    opacity: 1;
+}
+
+.overlay-item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.grid-el-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 15px;
+    transform: translateY(100px);
+    transition: all .3s;
+    border-bottom: 5px solid red;
+}
+
+.grid-text-item {
+    font-weight: bold;
+}
+
+.footer-pagination {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-pagination .ant-btn {
+    color: red;
+    border: none;
+    font-size: 25px;
+    height: auto;
+}
